@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.kahle23</groupId>
     <artifactId>baibao-spring-boot-starter-parent</artifactId>
-    <version>1.0.0.232r</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
-    <name>Baibao Spring boot starter parent</name>
+    <name>BaiBao Spring Boot Starter Parent</name>
     <url>https://github.com/kahle23/baibao-dependencies</url>
-    <description>百宝的 Spring Boot 的核心的项目统一依赖管理.</description>
+    <description>百宝的基于 Spring Boot 的核心的项目统一依赖管理.</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -19,7 +19,7 @@
     </parent>
 
     <properties>
-        <!-- ********** 基础配置 ********** -->
+        <!-- ********** 基础的配置 ********** -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <java.version>1.8</java.version>
@@ -47,7 +47,7 @@
         <caffeine.version>2.9.3</caffeine.version>
         <!-- ////////////////////////////// -->
 
-        <!-- ********** 不常用的依赖 ********** -->
+        <!-- ********** 普通的依赖 ********** -->
         <guava.version>20.0</guava.version>
         <!-- ////////////////////////////// -->
     </properties>
@@ -69,7 +69,7 @@
             </dependency>
             <!-- //////////////// - Dependencies 导入 - //////////////// -->
 
-            <!-- **************** - 核心依赖 - **************** -->
+            <!-- **************** - 核心的依赖 - **************** -->
             <!-- Lombok 注解支持 -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -82,9 +82,9 @@
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
-            <!-- //////////////// - 核心依赖 - //////////////// -->
+            <!-- //////////////// - 核心的依赖 - //////////////// -->
 
-            <!-- **************** - 常用依赖 - **************** -->
+            <!-- **************** - 常用的依赖 - **************** -->
             <!-- MyBatis 相关 -->
             <dependency>
                 <groupId>org.mybatis</groupId>
@@ -137,16 +137,16 @@
                 <artifactId>caffeine</artifactId>
                 <version>${caffeine.version}</version>
             </dependency>
-            <!-- //////////////// - 常用依赖 - //////////////// -->
+            <!-- //////////////// - 常用的依赖 - //////////////// -->
 
-            <!-- **************** - 不常用的依赖 - **************** -->
+            <!-- **************** - 普通的依赖 - **************** -->
             <!-- 统一 Guava 版本防止冲突 -->
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
             </dependency>
-            <!-- //////////////// - 不常用的依赖 - //////////////// -->
+            <!-- //////////////// - 普通的依赖 - //////////////// -->
         </dependencies>
     </dependencyManagement>
 
@@ -181,7 +181,7 @@
         <!-- //////////////// - Spring 相关依赖 - //////////////// -->
 
 
-        <!-- **************** - 重要的依赖 - **************** -->
+        <!-- **************** - 核心的依赖 - **************** -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -191,7 +191,7 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
         </dependency>
-        <!-- //////////////// - 重要的依赖 - //////////////// -->
+        <!-- //////////////// - 核心的依赖 - //////////////// -->
 
 
         <!-- **************** - MyBatis 相关依赖 - **************** -->
@@ -239,23 +239,16 @@
         </dependency>
         <!-- //////////////// - Redis 相关依赖 - //////////////// -->
 
+        <!-- **************** - 内存缓存相关依赖 - **************** -->
         <dependency>
             <groupId>com.github.ben-manes.caffeine</groupId>
             <artifactId>caffeine</artifactId>
         </dependency>
+        <!-- //////////////// - 内存缓存相关依赖 - //////////////// -->
 
     </dependencies>
 
     <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>**/*</include>
-                </includes>
-            </resource>
-        </resources>
     </build>
 
 </project>
