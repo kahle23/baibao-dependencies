@@ -18,6 +18,27 @@
         <relativePath/>
     </parent>
 
+    <licenses>
+        <license>
+            <name>GNU GENERAL PUBLIC LICENSE, Version 3</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Kahle Kernel</name>
+            <email>kahle23@163.com</email>
+            <url>https://github.com/kahle23</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/kahle23/baibao-dependencies</url>
+        <connection>scm:git:https://github.com/kahle23/baibao-dependencies.git</connection>
+        <developerConnection>https://github.com/kahle23</developerConnection>
+    </scm>
+
     <properties>
         <!-- ********** 基础的配置 ********** -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,29 +47,14 @@
         <skipTests>true</skipTests>
         <!-- ////////////////////////////// -->
 
-        <!-- ********** 继承的依赖 ********** -->
+        <!-- ********** 核心的依赖 ********** -->
         <spring-boot.version>2.3.2.RELEASE</spring-boot.version>
         <!-- ////////////////////////////// -->
 
-        <!-- ********** 核心的依赖 ********** -->
-        <lombok.version>1.18.22</lombok.version>
-        <hutool.version>5.6.6</hutool.version>
-        <!-- ////////////////////////////// -->
-
         <!-- ********** 常用的依赖 ********** -->
-        <mybatis.version>3.5.5</mybatis.version>
-        <mybatis-spring.version>2.0.5</mybatis-spring.version>
-        <mybatis-autoconfigure.version>2.1.3</mybatis-autoconfigure.version>
-        <mybatis-plus-starter.version>3.4.2</mybatis-plus-starter.version>
-        <pagehelper-starter.version>1.2.10</pagehelper-starter.version>
-        <pagehelper.version>5.1.8</pagehelper.version>
-        <mysql-connector.version>8.0.16</mysql-connector.version>
-        <jjwt.version>0.9.0</jjwt.version>
-        <caffeine.version>2.9.3</caffeine.version>
         <!-- ////////////////////////////// -->
 
         <!-- ********** 普通的依赖 ********** -->
-        <guava.version>20.0</guava.version>
         <!-- ////////////////////////////// -->
     </properties>
 
@@ -70,82 +76,12 @@
             <!-- //////////////// - Dependencies 导入 - //////////////// -->
 
             <!-- **************** - 核心的依赖 - **************** -->
-            <!-- Lombok 注解支持 -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </dependency>
-            <!-- Hutool Java 工具包 -->
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>${hutool.version}</version>
-            </dependency>
             <!-- //////////////// - 核心的依赖 - //////////////// -->
 
             <!-- **************** - 常用的依赖 - **************** -->
-            <!-- MyBatis 相关 -->
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis</artifactId>
-                <version>${mybatis.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis-spring</artifactId>
-                <version>${mybatis-spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-autoconfigure</artifactId>
-                <version>${mybatis-autoconfigure.version}</version>
-            </dependency>
-            <!-- MyBatis Plus 相关 -->
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>${mybatis-plus-starter.version}</version>
-            </dependency>
-            <!-- PageHelper 分页插件 Starter -->
-            <dependency>
-                <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper-spring-boot-starter</artifactId>
-                <version>${pagehelper-starter.version}</version>
-            </dependency>
-            <!-- PageHelper 分页插件 -->
-            <dependency>
-                <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper</artifactId>
-                <version>${pagehelper.version}</version>
-            </dependency>
-            <!-- Mysql 数据库驱动 -->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql-connector.version}</version>
-            </dependency>
-            <!-- JWT(Json Web Token) 登录支持 -->
-            <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt</artifactId>
-                <version>${jjwt.version}</version>
-            </dependency>
-            <!-- Caffeine 内存缓存 -->
-            <dependency>
-                <groupId>com.github.ben-manes.caffeine</groupId>
-                <artifactId>caffeine</artifactId>
-                <version>${caffeine.version}</version>
-            </dependency>
             <!-- //////////////// - 常用的依赖 - //////////////// -->
 
             <!-- **************** - 普通的依赖 - **************** -->
-            <!-- 统一 Guava 版本防止冲突 -->
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${guava.version}</version>
-            </dependency>
             <!-- //////////////// - 普通的依赖 - //////////////// -->
         </dependencies>
     </dependencyManagement>
@@ -182,73 +118,45 @@
 
 
         <!-- **************** - 核心的依赖 - **************** -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-        </dependency>
         <!-- //////////////// - 核心的依赖 - //////////////// -->
-
-
-        <!-- **************** - MyBatis 相关依赖 - **************** -->
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-spring</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-autoconfigure</artifactId>
-        </dependency>
-        <!-- //////////////// - MyBatis 相关依赖 - //////////////// -->
-
-
-        <!-- **************** - MyBatis Plus 相关依赖 - **************** -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-        </dependency>
-        <!-- //////////////// - MyBatis Plus 相关依赖 - //////////////// -->
-
-
-        <!-- **************** - PageHelper 相关依赖 - **************** -->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.mybatis.spring.boot</groupId>
-                    <artifactId>mybatis-spring-boot-starter</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- //////////////// - PageHelper 相关依赖 - //////////////// -->
-
-
-        <!-- **************** - Redis 相关依赖 - **************** -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <!-- //////////////// - Redis 相关依赖 - //////////////// -->
-
-        <!-- **************** - 内存缓存相关依赖 - **************** -->
-        <dependency>
-            <groupId>com.github.ben-manes.caffeine</groupId>
-            <artifactId>caffeine</artifactId>
-        </dependency>
-        <!-- //////////////// - 内存缓存相关依赖 - //////////////// -->
-
     </dependencies>
 
     <build>
     </build>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.8.0</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>ossrh</publishingServerId>
+                            <autoPublish>true</autoPublish>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
