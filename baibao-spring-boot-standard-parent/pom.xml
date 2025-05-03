@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>baibao-spring-boot-standard-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.3</version>
     <packaging>pom</packaging>
     <name>BaiBao Spring Boot Standard Parent</name>
     <url>https://github.com/kahle23/baibao-dependencies</url>
@@ -13,7 +13,7 @@
     <parent>
         <groupId>io.github.kahle23</groupId>
         <artifactId>baibao-spring-boot-starter-parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.3</version>
         <relativePath/>
     </parent>
 
