@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.kahle23</groupId>
     <artifactId>baibao-spring-boot-starter-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1b</version>
     <packaging>pom</packaging>
     <name>BaiBao Spring Boot Starter Parent</name>
     <url>https://github.com/kahle23/baibao-dependencies</url>
@@ -17,6 +17,27 @@
         <version>2.3.2.RELEASE</version>
         <relativePath/>
     </parent>
+
+    <licenses>
+        <license>
+            <name>GNU GENERAL PUBLIC LICENSE, Version 3</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Kahle Kernel</name>
+            <email>kahle23@163.com</email>
+            <url>https://github.com/kahle23</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/kahle23/baibao-dependencies</url>
+        <connection>scm:git:https://github.com/kahle23/baibao-dependencies.git</connection>
+        <developerConnection>https://github.com/kahle23</developerConnection>
+    </scm>
 
     <properties>
         <!-- ********** 基础的配置 ********** -->
@@ -31,20 +52,23 @@
         <!-- ////////////////////////////// -->
 
         <!-- ********** 核心的依赖 ********** -->
+        <baibao.version>1.0.0.24520b</baibao.version>
         <lombok.version>1.18.22</lombok.version>
-        <hutool.version>5.6.6</hutool.version>
+        <bcprov-jdk15on.version>1.67</bcprov-jdk15on.version>
+        <transmittable-thread-local.version>2.12.6</transmittable-thread-local.version>
+        <hutool.version>5.8.38</hutool.version>
         <!-- ////////////////////////////// -->
 
         <!-- ********** 常用的依赖 ********** -->
-        <mybatis.version>3.5.5</mybatis.version>
+        <mybatis.version>3.5.6</mybatis.version>
         <mybatis-spring.version>2.0.5</mybatis-spring.version>
         <mybatis-autoconfigure.version>2.1.3</mybatis-autoconfigure.version>
-        <mybatis-plus-starter.version>3.4.2</mybatis-plus-starter.version>
+        <mybatis-plus-starter.version>3.5.3</mybatis-plus-starter.version>
         <pagehelper-starter.version>1.2.10</pagehelper-starter.version>
-        <pagehelper.version>5.1.8</pagehelper.version>
-        <mysql-connector.version>8.0.16</mysql-connector.version>
-        <jjwt.version>0.9.0</jjwt.version>
+        <mysql-connector.version>8.0.28</mysql-connector.version>
+        <jjwt.version>0.9.1</jjwt.version>
         <caffeine.version>2.9.3</caffeine.version>
+        <javax-mail.version>1.6.1</javax-mail.version>
         <!-- ////////////////////////////// -->
 
         <!-- ********** 普通的依赖 ********** -->
@@ -70,11 +94,29 @@
             <!-- //////////////// - Dependencies 导入 - //////////////// -->
 
             <!-- **************** - 核心的依赖 - **************** -->
+            <!-- 百宝框架包 -->
+            <dependency>
+                <groupId>io.github.kahle23</groupId>
+                <artifactId>baibao</artifactId>
+                <version>${baibao.version}</version>
+            </dependency>
             <!-- Lombok 注解支持 -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+            <!-- Bcprov 加解密 -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk15on</artifactId>
+                <version>${bcprov-jdk15on.version}</version>
+            </dependency>
+            <!-- ThreadLocal 工具包 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable-thread-local.version}</version>
             </dependency>
             <!-- Hutool Java 工具包 -->
             <dependency>
@@ -107,17 +149,11 @@
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus-starter.version}</version>
             </dependency>
-            <!-- PageHelper 分页插件 Starter -->
+            <!-- PageHelper 分页插件 -->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper-starter.version}</version>
-            </dependency>
-            <!-- PageHelper 分页插件 -->
-            <dependency>
-                <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper</artifactId>
-                <version>${pagehelper.version}</version>
             </dependency>
             <!-- Mysql 数据库驱动 -->
             <dependency>
@@ -136,6 +172,17 @@
                 <groupId>com.github.ben-manes.caffeine</groupId>
                 <artifactId>caffeine</artifactId>
                 <version>${caffeine.version}</version>
+            </dependency>
+            <!-- Javax Mail 工具包 -->
+            <dependency>
+                <groupId>javax.mail</groupId>
+                <artifactId>javax.mail-api</artifactId>
+                <version>${javax-mail.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>javax.mail</artifactId>
+                <version>${javax-mail.version}</version>
             </dependency>
             <!-- //////////////// - 常用的依赖 - //////////////// -->
 
@@ -188,6 +235,14 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>transmittable-thread-local</artifactId>
+        </dependency>
+        <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
         </dependency>
@@ -232,13 +287,6 @@
         <!-- //////////////// - PageHelper 相关依赖 - //////////////// -->
 
 
-        <!-- **************** - Redis 相关依赖 - **************** -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <!-- //////////////// - Redis 相关依赖 - //////////////// -->
-
         <!-- **************** - 内存缓存相关依赖 - **************** -->
         <dependency>
             <groupId>com.github.ben-manes.caffeine</groupId>
@@ -250,5 +298,40 @@
 
     <build>
     </build>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.8.0</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>ossrh</publishingServerId>
+                            <autoPublish>true</autoPublish>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
